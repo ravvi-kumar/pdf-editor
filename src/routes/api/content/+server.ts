@@ -1,8 +1,8 @@
-import { json, redirect } from '@sveltejs/kit';
-import type { RequestHandler } from './$types';
 import { db } from '$lib/server/db';
 import { pdfFile } from '$lib/server/db/schema';
+import { json } from '@sveltejs/kit';
 import { eq } from 'drizzle-orm';
+import type { RequestHandler } from './$types';
 
 export const POST: RequestHandler = async ({ request }) => {
     const { fileName, fileUrl, htmlContent } = await request.json();
