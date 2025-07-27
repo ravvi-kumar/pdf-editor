@@ -1,4 +1,5 @@
-const PDF_SERVICE_URL = "http://localhost:8000"
+// const PDF_SERVICE_URL = "http://localhost:8000"
+const PDF_SERVICE_URL = "https://pdf2html-susv.onrender.com"
 
 export async function pdfToHtml(file:File) {
     try {

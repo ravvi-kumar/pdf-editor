@@ -9,7 +9,7 @@
 
 	const { startUpload } = createUploadThing('imageUploader', {
 		onClientUploadComplete: () => {
-			alert('Upload Completed');
+			// alert('Upload Completed');
 		}
 	});
 
