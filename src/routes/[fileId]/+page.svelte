@@ -12,32 +12,30 @@
 	if (browser) {
 		document.designMode = 'on';
 
-		function onHover(e:MouseEvent){
+		function onHover(e: MouseEvent) {
 			const div = e.target as HTMLDivElement;
-			div.style.outline="1px dashed gray";
-			div.style.outlineOffset = "10px"; // this pushes the outline outward
-
+			div.style.outline = '1px dashed gray';
+			div.style.outlineOffset = '10px'; // this pushes the outline outward
 		}
 
-		function onHoverLeave(e:MouseEvent){
+		function onHoverLeave(e: MouseEvent) {
 			const div = e.target as HTMLDivElement;
-			div.style.outline="none";
-			div.style.outlineOffset = "0px"; // optional reset
-
+			div.style.outline = 'none';
+			div.style.outlineOffset = '0px'; // optional reset
 		}
 
 		const divs = document.querySelectorAll('div');
-		divs.forEach((div)=>{
-			div.addEventListener('mouseover',onHover)
-			div.addEventListener('mouseout',onHoverLeave)
-		})
+		divs.forEach((div) => {
+			div.addEventListener('mouseover', onHover);
+			div.addEventListener('mouseout', onHoverLeave);
+		});
 
-		onDestroy(()=>{
-			divs.forEach((div)=>{
-				div.removeEventListener('mouseover',onHover)
-				div.removeEventListener('mouseout',onHoverLeave)
-			})
-		})
+		onDestroy(() => {
+			divs.forEach((div) => {
+				div.removeEventListener('mouseover', onHover);
+				div.removeEventListener('mouseout', onHoverLeave);
+			});
+		});
 	}
 
 	async function save() {
@@ -73,7 +71,7 @@
 		contenteditable="false"
 		onclick={save}
 		class="cursor-pointer rounded-md bg-blue-600 px-3 py-1 text-white transition hover:bg-blue-700 focus:ring-2 focus:ring-blue-400 focus:outline-none"
-		>
+	>
 		{isSaving ? 'Saving...' : 'Save'}</button
 	>
 	<button
